@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "812321597018",
+    "firebase_url": "https://beproject-157e8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "beproject-157e8",
+    "storage_bucket": "beproject-157e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812321597018:android:eade1b9048c937dc095a63",
+        "android_client_info": {
+          "package_name": "com.example.beproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812321597018-ct0nvmdr68ukus346tvvpbn1else6mgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByvJJwsdrMNDq0maZJ8cIfKxqHyWvq4x4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812321597018-ct0nvmdr68ukus346tvvpbn1else6mgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.chaquo.python'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.example.beproject"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+
+        python {
+
+            pip {
+                install "scipy"
+                install "scikit-learn"
+                install "numpy"
+                install "pandas"
+                install "tensorflow"
+                install "tflite-runtime"
+                install "opencv-contrib-python-headless"
+                install "pillow"
+            }
+
+            buildPython
+        }
+
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'org.tensorflow:tensorflow-lite:+'
+    implementation 'com.rmtheis:tess-two:9.0.0'
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation "androidx.drawerlayout:drawerlayout:1.0.0"
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.mikhaellopez:circularimageview:4.0.2'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    implementation 'com.firebaseui:firebase-ui-database:5.1.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:5.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:5.1.0'
+    implementation 'com.firebaseui:firebase-ui-storage:5.1.0'
+
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation 'androidx.cardview:cardview:1.0.0-alpha3'
+}
